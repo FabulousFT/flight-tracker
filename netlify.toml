@@ -1,0 +1,15 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+  [functions.store]
+    external_node_modules = ["@netlify/blobs"]
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
